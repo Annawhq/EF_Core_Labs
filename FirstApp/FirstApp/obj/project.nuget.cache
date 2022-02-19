@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w0zaqLb5nTfQRfgK8/RkPC1UxvaP4cjjsL1HysbVW8ddKQFVmQKIUU9YROOFiswuBe/t3MVEd364u5KjUSViUg==",
+  "dgSpecHash": "M94yXXnsktYvCkhBkBmPsrqjJfj7Cy5LnVIZUpqbo8SJJh55WDfKy/kFeeK4tIlchPAxGB1sVrxRHbY9tlEXuQ==",
   "success": true,
-  "projectFilePath": "D:\\Annechka lubimaya\\Dolzhenko\\FirstApp\\FirstApp\\FirstApp.csproj",
+  "projectFilePath": "D:\\Annechka lubimaya\\EF-Core-labs\\FirstApp\\FirstApp\\FirstApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tereshchenko\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Tereshchenko\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Annechka lubimaya\\Dolzhenko\\HelloAppp\\HelloAppp.csproj": {}
+    "D:\\Annechka lubimaya\\EF-Core-labs\\HelloAppp\\HelloAppp\\HelloAppp.csproj": {}
   },
   "projects": {
-    "D:\\Annechka lubimaya\\Dolzhenko\\HelloAppp\\HelloAppp.csproj": {
+    "D:\\Annechka lubimaya\\EF-Core-labs\\HelloAppp\\HelloAppp\\HelloAppp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Annechka lubimaya\\Dolzhenko\\HelloAppp\\HelloAppp.csproj",
+        "projectUniqueName": "D:\\Annechka lubimaya\\EF-Core-labs\\HelloAppp\\HelloAppp\\HelloAppp.csproj",
         "projectName": "HelloAppp",
-        "projectPath": "D:\\Annechka lubimaya\\Dolzhenko\\HelloAppp\\HelloAppp.csproj",
+        "projectPath": "D:\\Annechka lubimaya\\EF-Core-labs\\HelloAppp\\HelloAppp\\HelloAppp.csproj",
         "packagesPath": "C:\\Users\\Tereshchenko\\.nuget\\packages\\",
-        "outputPath": "D:\\Annechka lubimaya\\Dolzhenko\\HelloAppp\\obj\\",
+        "outputPath": "D:\\Annechka lubimaya\\EF-Core-labs\\HelloAppp\\HelloAppp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -54,6 +54,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.5, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
