@@ -9,11 +9,11 @@ namespace AppRelationModel3
         {
             using (ApplicationContext db = new ApplicationContext())
             {
-            Company company1 = new Company { Name = "Google" };
+                Company company1 = new Company { Name = "Google" };
                 Company company2 = new Company { Name = "Microsoft" };
-                User user1 = new User { Name = "Tom", Company = company1 };
-                User user2 = new User { Name = "Bob", Company = company2 };
-                User user3 = new User { Name = "Sam", Company = company2 };
+                User user1 = new User { Name = "Tom", CompanyName = company1.Name };
+                User user2 = new User { Name = "Bob", CompanyName = "Microsoft" };
+                User user3 = new User { Name = "Sam", CompanyName = company2.Name };
                 db.Companies.AddRange(company1, company2); // добавление компаний
                 db.Users.AddRange(user1, user2, user3); // добавление пользователей
                 db.SaveChanges();
@@ -21,7 +21,6 @@ namespace AppRelationModel3
                 {
                     Console.WriteLine($"{user.Name} работает в {user.Company?.Name}");
                 }
-                Console.Read();
             }
         }
     }
