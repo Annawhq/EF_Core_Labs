@@ -9,6 +9,7 @@ namespace AppRelationModel4
 {
     public class ApplicationContext : DbContext
     {
+        public DbSet<Country> Countries { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<User> Users { get; set; }
 

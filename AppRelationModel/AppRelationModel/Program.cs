@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 
 namespace AppRelationModel
@@ -9,34 +10,27 @@ namespace AppRelationModel
         {
             using (ApplicationContext db = new ApplicationContext())
             {
-                // создаем два объекта Company
-                Company comp1 = new Company { Name = "Company 1" };
-                Company comp2 = new Company { Name = "Company 2" };
-                db.Companies.Add(comp1);
-                db.Companies.Add(comp2);
+                // пересоздадим базу данных
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+                // добавляем начальные данные
+                Company microsoft = new Company { Name = "Microsoft" };
+                Company google = new Company { Name = "Google" };
+                db.Companies.AddRange(microsoft, google);
+                User tom = new User { Name = "Tom", Company = microsoft };
+                User bob = new User { Name = "Bob", Company = google };
+                User alice = new User { Name = "Alice", Company = microsoft };
+                User kate = new User { Name = "Kate", Company = google };
+                db.Users.AddRange(tom, bob, alice, kate);
                 db.SaveChanges();
-                // создаем два объекта User
-                User user1 = new User { Name = "Tom"};
-                User user2 = new User { Name = "Alice"};
-                // добавляем их в БД
-                db.Users.Add(user1);
-                db.Users.Add(user2);
-                db.SaveChanges();
-                Console.WriteLine("Объекты успешно сохранены");
-                // получаем объекты из БД и выводим на консоль
-                var comp = db.Companies.ToList();
-                Console.WriteLine("Список компаний:");
-                foreach (Company u in comp)
-                {
-                    Console.WriteLine($"{u.Id}.{u.Name}");
-                }
-                // получаем объекты из БД и выводим на консоль
-                var users = db.Users.ToList();
-                Console.WriteLine("Список сотрудников:");
-                foreach (User u in users)
-                {
-                    Console.WriteLine($"{u.Name} работает в компании");
-                }
+            }
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                Company company = db.Companies.FirstOrDefault();
+                db.Entry(company).Collection(t => t.Users).Load();
+                Console.WriteLine($"Company: {company.Name}");
+                foreach (var p in company.Users)
+                    Console.WriteLine($"User: {p.Name}");
             }
             Console.Read();
         }
