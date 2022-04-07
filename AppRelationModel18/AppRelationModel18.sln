@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRelationModel18", "AppRelationModel18\AppRelationModel18.csproj", "{DDD19BA2-2843-416B-9B19-6412ED9815FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDD19BA2-2843-416B-9B19-6412ED9815FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD19BA2-2843-416B-9B19-6412ED9815FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD19BA2-2843-416B-9B19-6412ED9815FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD19BA2-2843-416B-9B19-6412ED9815FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03BC3ADE-00EA-4613-B0F9-BB7818E8C703}
+	EndGlobalSection
+EndGlobal
