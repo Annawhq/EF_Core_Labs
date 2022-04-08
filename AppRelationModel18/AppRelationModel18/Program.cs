@@ -25,9 +25,12 @@ namespace AppRelationModel18
             }
             using (ApplicationContext db = new ApplicationContext())
             {
-                var users = db.Users.OrderBy(u => u.Age).ThenBy(u => u.Company.Name);
-                foreach (User user in users)
-                    Console.WriteLine($"{user.Id}.{user.Name} ({user.Age})");
+                var users = from u in db.Users
+                            join c in db.Companies on u.CompanyId equals c.Id
+                            select new { Name = u.Name, Company = c.Name, Age = u.Age };
+                Console.WriteLine("Соединение таблиц методом Join");
+                foreach (var u in users)
+                    Console.WriteLine($"{u.Name} ({u.Company}) - {u.Age}");
             }
 
         }
