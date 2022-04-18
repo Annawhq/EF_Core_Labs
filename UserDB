@@ -1,0 +1,141 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.2
+-- Dumped by pg_dump version 14.2
+
+-- Started on 2022-04-14 22:26:28
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 210 (class 1259 OID 16396)
+-- Name: customers; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.customers (
+    id integer NOT NULL,
+    firstname character varying(30),
+    lastname character varying(30),
+    email character varying(30),
+    age integer
+);
+
+
+ALTER TABLE public.customers OWNER TO postgres;
+
+--
+-- TOC entry 209 (class 1259 OID 16395)
+-- Name: customers_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.customers_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.customers_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3320 (class 0 OID 0)
+-- Dependencies: 209
+-- Name: customers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.customers_id_seq OWNED BY public.customers.id;
+
+
+--
+-- TOC entry 211 (class 1259 OID 16402)
+-- Name: orderlines; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.orderlines (
+    orderid integer NOT NULL,
+    productid integer NOT NULL,
+    quantity integer,
+    price money
+);
+
+
+ALTER TABLE public.orderlines OWNER TO postgres;
+
+--
+-- TOC entry 3168 (class 2604 OID 16399)
+-- Name: customers id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.customers ALTER COLUMN id SET DEFAULT nextval('public.customers_id_seq'::regclass);
+
+
+--
+-- TOC entry 3313 (class 0 OID 16396)
+-- Dependencies: 210
+-- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.customers (id, firstname, lastname, email, age) FROM stdin;
+\.
+
+
+--
+-- TOC entry 3314 (class 0 OID 16402)
+-- Dependencies: 211
+-- Data for Name: orderlines; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.orderlines (orderid, productid, quantity, price) FROM stdin;
+\.
+
+
+--
+-- TOC entry 3321 (class 0 OID 0)
+-- Dependencies: 209
+-- Name: customers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.customers_id_seq', 1, false);
+
+
+--
+-- TOC entry 3170 (class 2606 OID 16401)
+-- Name: customers customers_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.customers
+    ADD CONSTRAINT customers_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3172 (class 2606 OID 16406)
+-- Name: orderlines orderlines_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.orderlines
+    ADD CONSTRAINT orderlines_pkey PRIMARY KEY (orderid, productid);
+
+
+-- Completed on 2022-04-14 22:26:29
+
+--
+-- PostgreSQL database dump complete
+--
+
